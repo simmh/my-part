@@ -5,28 +5,29 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './restaurant-list.component.html',
   styleUrls: ['./restaurant-list.component.css']
 })
-export class RestaurantListComponent implements OnInit {'
-  cardRepeat = 10;
+export class RestaurantListComponent implements OnInit {
+  cardList = [
+    {
+      name: '카페 무라노',
+      category: ['카페', '파스타', '피자'],
+      minimum: 15000,
+      flyTip: 3000,
+      distance: 0.8,
+      img1: 'https://kcf1.foodfly.co.kr/restaurants/13656/174045292353aa5117bd3c4.jpg',
+      img2: 'https://kcf1.foodfly.co.kr/restaurants/13656/153449878453aa5117bdf78.jpg'
+    }];
 
-  cardHTML = `
-  <div class="card" style="width: 14.5rem;">
-      <div class="img card-img-top"></div>
-      <div class="card-body">
-        <h5 class="card-title">카페 무라노</h5>
-        <p class="category">카페, 파스타, 피자</p>
-        <p class="limit-order">최소 주문: 16000 원</p>
-        <p class="fly-tip">배달팁:
-          <span>무료</span>
-        </p>
-        <p class="distnce"> 0.9km</p>
-      </div>
-      <div class="card-badge">asd</div>
-    </div>
-    `
-
-  constructor() { }
-
-  ngOnInit() {
+  cardRepeat() {
+    const card = this.cardList[0];
+    for (let i = 1; i < 12; i++) {
+      this.cardList = [...this.cardList, card];
+    }
   }
 
+  constructor() {
+  }
+
+  ngOnInit() {
+    this.cardRepeat();
+  }
 }
