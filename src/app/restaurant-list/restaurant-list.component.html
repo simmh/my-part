@@ -1,0 +1,78 @@
+<style>
+  * {
+    /* outline: 1px dotted gray; */
+  }
+
+  .selector-for-some-widget {
+    box-sizing: content-box;
+  }
+
+  .container {
+    margin: 1em;
+    border: 1px solid silver;
+  }
+
+  .card {
+    overflow: hidden;
+    border-radius: 0;
+    position: relative;
+  }
+
+  .card .img {
+    background-image: url("https://kcf1.foodfly.co.kr/restaurants/13656/174045292353aa5117bd3c4.jpg");
+    /* background-image: url("https://kcf1.foodfly.co.kr/restaurants/13656/153449878453aa5117bdf78.jpg"); */
+    background-repeat: no-repeat;
+    background-position: top;
+    width: 100%;
+    height: 300px;
+  }
+
+  .card .card-body {
+    padding: .8em;
+  }
+
+  .card .card-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .card .card-body p {
+    margin-bottom: 2px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #666666;
+
+  }
+
+
+  .card-badge {
+    width: 65px;
+    border: aquamarine solid 1px;
+    height: 65px;
+
+    position: absolute;
+    top: 0;
+  }
+</style>
+
+<div class="container restaurants">
+  <div class="row">
+
+    <!-- card start -->
+      <div *ngFor="let n of cardRepeat" class="card" style="width: 14.5rem;">
+        <div class="img card-img-top"></div>
+        <div class="card-body">
+          <h5 class="card-title">카페 무라노</h5>
+          <p class="category">카페, 파스타, 피자</p>
+          <p class="limit-order">최소 주문: 16000 원</p>
+          <p class="fly-tip">배달팁:
+            <span>무료</span>
+          </p>
+          <p class="distnce"> 0.9km</p>
+        </div>
+        <div class="card-badge">asd</div>
+      </div>
+    <!-- card end -->
+
+  </div>
+</div>
